@@ -1,0 +1,17 @@
+// Import the 'path' module from Node.js
+const path = require('path');
+
+// Export an object containing configuration paths
+module.exports = {
+    // Path to the 'config.json' file in the './src/config' directory
+    'config': path.resolve('./src/config', 'config.json'),
+
+    // Path to the 'migrations' directory in the './src' directory
+    'migrations-path': path.resolve('./src', 'migrations'),
+
+    // Path to the 'models' directory in the './src' directory
+    'models-path': path.resolve('./src', 'models'),
+
+    // Path to the 'seeders' directory in the './src' directory
+    'seeders-path': path.resolve('./src', 'seeders'),
+}
