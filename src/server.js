@@ -8,7 +8,10 @@ import bodyParser from 'body-parser';
 import viewEngine from './config/viewEngine';
 
 // Import the custom route configurations
-import iniWebRoutes from './route/web';
+import initWebRoutes from './route/web';
+
+//Import the custom connectDB configurations
+import connectDB from './config/connectDB';
 
 // Load environment variables from a .env file into process.env
 require('dotenv').config();
@@ -26,7 +29,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 viewEngine(app);
 
 // Initialize the web routes using the custom iniWebRoutes function
-iniWebRoutes(app);
+initWebRoutes(app);
+
+connectDB();
 
 // Set the port for the application to listen on
 // Use the port specified in the environment variables, or default to 6969 if not defined
