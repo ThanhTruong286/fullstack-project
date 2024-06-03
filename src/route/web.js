@@ -9,6 +9,8 @@ let router = express.Router();
 let initWebRoutes = (app) => {
     // Define a route for the root URL ('/') that sends 'Hello World' as the response.
     router.get('/', homeController.getHomePage);
+    router.get('/crud', homeController.getCRUD);
+    router.post('/post-crud', homeController.postCRUD);
 
     // Use the router middleware in the app, starting from the root path.
     return app.use('/', router);
